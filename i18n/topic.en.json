@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Topic · AI Data Center",
+    "description": "AI DC Topic: white papers and viewpoint essays, presented as cards."
+  },
+  "page": {
+    "h1": "Topic",
+    "intro": "White papers and viewpoint essays on planning and building AI data centers. Open a card to read the full document or article.",
+    "kindPdf": "White Paper",
+    "kindHtml": "Viewpoint",
+    "readCta": "Read",
+    "comingCta": "Coming soon",
+    "loading": "Loading topics…",
+    "empty": "No topics yet.",
+    "loadError": "The topic catalog could not be loaded. Please try again later."
+  },
+  "topics": {
+    "whitepaper-2024": {
+      "title": "AI DC White Paper 2024",
+      "summary": "Version 1.0 (Chinese edition). A systematic reference for AI data center planning and construction, with online preview and download."
+    },
+    "sovereign-ai": {
+      "title": "Sovereign AI starts with the factory",
+      "summary": "A practical path for governments and leading enterprises. The AI data center is that factory."
+    },
+    "whitepaper-2026": {
+      "title": "AI DC White Paper 2026",
+      "summary": "Version 2.0 is in progress, planned for autumn 2026."
+    }
+  }
+}

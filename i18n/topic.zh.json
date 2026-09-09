@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Topic · AI Data Center",
+    "description": "AI DC Topic：白皮书与专题观点，按卡片查阅。"
+  },
+  "page": {
+    "h1": "Topic",
+    "intro": "围绕 AI 数据中心的规划与建设，汇集白皮书与专题观点。点开卡片阅读完整文档或文章。",
+    "kindPdf": "白皮书",
+    "kindHtml": "观点",
+    "readCta": "阅读",
+    "comingCta": "即将发布",
+    "loading": "正在加载 Topic…",
+    "empty": "暂无 Topic。",
+    "loadError": "Topic 目录暂时无法加载，请稍后重试。"
+  },
+  "topics": {
+    "whitepaper-2024": {
+      "title": "AI DC 白皮书 2024",
+      "summary": "1.0 中文版。为 AI 数据中心规划与建设提供系统化参考，支持在线预览与下载。"
+    },
+    "sovereign-ai": {
+      "title": "主权 AI，从工厂开始",
+      "summary": "面向政府与领先企业的务实路径。AI 数据中心，就是那座工厂。"
+    },
+    "whitepaper-2026": {
+      "title": "AI DC 白皮书 2026",
+      "summary": "2.0 版本规划中，预计 2026 年秋季发布。"
+    }
+  }
+}

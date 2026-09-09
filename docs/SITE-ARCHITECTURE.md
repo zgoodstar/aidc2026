@@ -37,7 +37,7 @@ aidc/
 - `ai-dc-design.html`：AI DC 规划容器，也是站点 Logo 的默认入口。
 - `index.html`：Agentic 推理容器，同时承载混部、分离和 KV Cache 计算。
 - `post-training.html`：后训练独立页面。
-- `white-paper.html`：白皮书独立页面，按需加载 PDF。
+- `topic.html`：Topic 目录（卡片网格）。子页包括白皮书 PDF 预览与观点 HTML。旧地址 `white-paper.html` 由 Nginx 301 到本页。
 - `about-us.html`：团队、版本和 Token 用量。
 - `404.html`：站点错误页。
 - `status.html`：内部访问观测页，不出现在主导航；入口来自 About US。
@@ -81,6 +81,19 @@ index.html
 
 iframe URL 与语言同步由 `js/index-page.js` 管理。`inference/styles.css` 是两个推理子页的共享样式。
 
+## 5.1 Topic 页面树
+
+```text
+topic.html                Topic 目录（data/topics.json）
+├── white-paper-2024.html     白皮书 PDF 预览（2024）
+└── topic-sovereign-ai.html   观点：主权 AI，从工厂开始
+    ├── topic/sovereign-ai/sovereign-ai-zh.html  中文幻灯片
+    └── topic/sovereign-ai/sovereign-ai.html     英文幻灯片
+```
+
+后续白皮书或观点只需在 `data/topics.json` 增加条目，并补对应 HTML / PDF。`kind` 为 `pdf` 或 `html`，`status` 为 `published` 或 `coming`。
+
+
 ## 6. 页面与资源关联
 
 每个 HTML 必须在 `data/page-registry.json` 登记：
@@ -114,7 +127,7 @@ iframe URL 与语言同步由 `js/index-page.js` 管理。`inference/styles.css`
 - Investment ROI：读取和管理 `/api/config/roi.*`，本地默认由页面初始化脚本和 `data/config-seeds/` 保持。
 - 站点状态：使用 `/api/analytics/summary`，必须服务端认证。
 - About US：读取 `data/ai-usage.json` 和 `data/site-release.json`。
-- 白皮书：可选读取 `assets/aidc-whitepaper-2024-zh.pdf`，缺失时必须显示就绪提示。
+- Topic 目录：读取 `data/topics.json`；卡片可指向白皮书 PDF 预览页或观点 HTML。`assets/aidc-whitepaper-2024-zh.pdf` 允许缺失，预览页必须显示就绪提示。主权 AI 观点页按语言嵌入 `topic/sovereign-ai/sovereign-ai-zh.html` / `topic/sovereign-ai/sovereign-ai.html`；配图在 `topic/sovereign-ai/assets/`。演讲稿留在该目录，不作为站点入口。
 - 页面文案：所有标准页面读取 `i18n/common.*.json` 和自己的页面 bundle。
 
 管理凭据仅存在于服务端 `ADMIN_TOKEN` 环境变量。ROI 与 3D 页面由用户输入凭据并调用服务端验证；公共配置接口不得返回口令或其验证材料。

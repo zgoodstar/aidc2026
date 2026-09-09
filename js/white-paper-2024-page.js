@@ -1,5 +1,5 @@
 /**
- * 白皮书页：检测 PDF 是否可用，缺失时展示友好 fallback。
+ * 白皮书 2024 预览页：检测 PDF 是否可用，缺失时展示友好 fallback。
  */
 (function (global) {
   'use strict';
@@ -34,7 +34,7 @@
     });
   }
 
-  async function initWhitePaperPage() {
+  async function initWhitePaper2024Page() {
     const viewer = document.getElementById('whitepaper-2024-viewer');
     const missing = document.getElementById('whitepaper-missing');
     const hint = document.getElementById('whitepaper-fallback-hint');
@@ -61,5 +61,5 @@
     if (deploy) deploy.textContent = t('edition.missingDeployHint');
   }
 
-  global.initWhitePaperPage = initWhitePaperPage;
+  global.initWhitePaper2024Page = initWhitePaper2024Page;
 })(typeof window !== 'undefined' ? window : globalThis);

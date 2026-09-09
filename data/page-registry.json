@@ -417,23 +417,119 @@
       "dataSources": []
     },
     {
-      "path": "white-paper.html",
-      "id": "white-paper",
-      "title": "白皮书",
+      "path": "topic.html",
+      "id": "topic",
+      "title": "Topic",
       "kind": "entry",
       "visibility": "public",
       "parents": [],
       "embeds": [],
       "assets": [
-        "js/white-paper-page.js",
-        "i18n/white-paper.zh.json",
-        "i18n/white-paper.en.json"
+        "js/topic-page.js",
+        "i18n/topic.zh.json",
+        "i18n/topic.en.json"
+      ],
+      "dataSources": [
+        "data/topics.json"
+      ]
+    },
+    {
+      "path": "white-paper-2024.html",
+      "id": "white-paper-2024",
+      "title": "AI DC 白皮书 2024",
+      "kind": "entry",
+      "visibility": "public",
+      "parents": [],
+      "embeds": [],
+      "assets": [
+        "js/white-paper-2024-page.js",
+        "i18n/white-paper-2024.zh.json",
+        "i18n/white-paper-2024.en.json"
       ],
       "dataSources": [
         "assets/aidc-whitepaper-2024-zh.pdf"
       ],
       "optionalDataSources": [
         "assets/aidc-whitepaper-2024-zh.pdf"
+      ]
+    },
+    {
+      "path": "topic-sovereign-ai.html",
+      "id": "topic-sovereign-ai",
+      "title": "主权 AI，从工厂开始",
+      "kind": "container",
+      "visibility": "public",
+      "parents": [],
+      "embeds": [
+        "topic/sovereign-ai/sovereign-ai-zh.html",
+        "topic/sovereign-ai/sovereign-ai.html"
+      ],
+      "assets": [
+        "js/topic-sovereign-ai-page.js",
+        "i18n/topic-sovereign-ai.zh.json",
+        "i18n/topic-sovereign-ai.en.json"
+      ],
+      "dataSources": []
+    },
+    {
+      "path": "topic/sovereign-ai/sovereign-ai-zh.html",
+      "id": "topic-sovereign-ai-zh",
+      "title": "主权 AI，从工厂开始",
+      "kind": "embedded",
+      "visibility": "public",
+      "parents": [
+        {
+          "path": "topic-sovereign-ai.html",
+          "relation": "iframe"
+        }
+      ],
+      "embeds": [],
+      "assets": [],
+      "dataSources": [
+        "topic/sovereign-ai/assets/ai-history-icons-signal.png",
+        "topic/sovereign-ai/assets/ai-national-action-signal.png",
+        "topic/sovereign-ai/assets/ai-model-black-hole-signal.png",
+        "topic/sovereign-ai/assets/ai-sovereign-factory-signal.png",
+        "topic/sovereign-ai/assets/ai-full-stack-signal.png"
+      ]
+    },
+    {
+      "path": "topic/sovereign-ai/sovereign-ai.html",
+      "id": "topic-sovereign-ai-en",
+      "title": "Sovereign AI starts with the factory",
+      "kind": "embedded",
+      "visibility": "public",
+      "parents": [
+        {
+          "path": "topic-sovereign-ai.html",
+          "relation": "iframe"
+        }
+      ],
+      "embeds": [],
+      "assets": [],
+      "dataSources": [
+        "topic/sovereign-ai/assets/ai-history-icons-signal.png",
+        "topic/sovereign-ai/assets/ai-national-action-signal.png",
+        "topic/sovereign-ai/assets/ai-model-black-hole-signal.png",
+        "topic/sovereign-ai/assets/ai-sovereign-factory-signal.png",
+        "topic/sovereign-ai/assets/ai-full-stack-signal.png"
+      ]
+    },
+    {
+      "path": "topic/sovereign-ai/versions/index.2026-09-09-v19.html",
+      "id": "topic-sovereign-ai-en-v19",
+      "title": "Sovereign AI starts with the factory (archive)",
+      "kind": "internal",
+      "visibility": "internal",
+      "parents": [],
+      "embeds": [],
+      "assets": [],
+      "dataSources": [
+        "topic/sovereign-ai/assets/ai-history-icons-signal.png",
+        "topic/sovereign-ai/assets/ai-national-action-signal.png",
+        "topic/sovereign-ai/assets/ai-model-black-hole-signal.png",
+        "topic/sovereign-ai/assets/ai-sovereign-factory-signal.png",
+        "topic/sovereign-ai/assets/ai-full-stack-signal.png"
       ]
     },
     {

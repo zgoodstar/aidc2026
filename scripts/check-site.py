@@ -15,6 +15,14 @@ ROOT = Path(__file__).resolve().parent.parent
 # Redirect-only compatibility HTML pages have been removed.
 REDIRECT_HTML: set[str] = set()
 
+# Full-viewport presentation decks keep their own chrome; language is file-split.
+# Official entry is the site wrapper that embeds them.
+CHROMELESS_HTML: set[str] = {
+    "topic/sovereign-ai/sovereign-ai.html",
+    "topic/sovereign-ai/sovereign-ai-zh.html",
+    "topic/sovereign-ai/versions/index.2026-09-09-v19.html",
+}
+
 # Known extra ALLOWED_CONFIG_KEYS that have no file in data/config-seeds/.
 SEEDLESS_CONFIG_KEYS: set[str] = set()
 
@@ -136,9 +144,23 @@ def should_skip_ref(ref: str) -> bool:
     return False
 
 
-def check_html_refs(errors: list[str]) -> None:
-    for html_path in sorted(ROOT.rglob("*.html")):
-        rel = html_path.relative_to(ROOT).as_posix()
+def optional_html_refs(loaded: dict[Path, Any], root: Path = ROOT) -> set[str]:
+    registry = loaded.get(root / "data" / "page-registry.json") or {}
+    optional: set[str] = set()
+    for page in registry.get("pages") or []:
+        if not isinstance(page, dict):
+            continue
+        for source in page.get("optionalDataSources") or []:
+            if isinstance(source, str) and source:
+                optional.add(source)
+    return optional
+
+
+def check_html_refs(errors: list[str], loaded: dict[Path, Any] | None = None, root: Path = ROOT) -> None:
+    optional = optional_html_refs(loaded or {}, root)
+    root_resolved = root.resolve()
+    for html_path in sorted(root.rglob("*.html")):
+        rel = html_path.relative_to(root).as_posix()
         if "/." in f"/{rel}" or rel.startswith("."):
             continue
         text = html_path.read_text(encoding="utf-8")
@@ -148,8 +170,10 @@ def check_html_refs(errors: list[str]) -> None:
             path_only = raw.split("?")[0].split("#")[0]
             target = (html_path.parent / path_only).resolve()
             try:
-                target.relative_to(ROOT.resolve())
+                rel_target = target.relative_to(root_resolved).as_posix()
             except ValueError:
+                continue
+            if rel_target in optional:
                 continue
             if not target.is_file():
                 errors.append(f"{rel} 引用缺失: {raw}")
@@ -158,7 +182,7 @@ def check_html_refs(errors: list[str]) -> None:
         match = I18N_PAGE_RE.search(text)
         if match:
             page_id = match.group(1)
-        if rel in REDIRECT_HTML:
+        if rel in REDIRECT_HTML or rel in CHROMELESS_HTML:
             continue
         if not page_id:
             errors.append(f"{rel} 缺少 data-i18n-page")
@@ -229,7 +253,10 @@ def check_page_registry(errors: list[str], loaded: dict[Path, Any], root: Path =
             text = html_path.read_text(encoding="utf-8")
             match = I18N_PAGE_RE.search(text)
             actual_id = match.group(1) if match else None
-            if actual_id != page_id:
+            if page_path in CHROMELESS_HTML:
+                if actual_id and actual_id != page_id:
+                    errors.append(f"{page_path} 注册 id={page_id} 与 data-i18n-page={actual_id} 不一致")
+            elif actual_id != page_id:
                 errors.append(f"{page_path} 注册 id={page_id} 与 data-i18n-page={actual_id} 不一致")
 
         for asset in raw_page.get("assets") or []:
@@ -440,7 +467,7 @@ def main() -> int:
     errors: list[str] = []
     loaded = check_json_parse(errors)
     check_i18n_pairs(errors, loaded)
-    check_html_refs(errors)
+    check_html_refs(errors, loaded)
     check_page_registry(errors, loaded)
     check_design_nav(errors, loaded)
     check_frontend_secret_refs(errors)

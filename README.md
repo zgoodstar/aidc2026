@@ -29,7 +29,7 @@
 | **Agentic 推理** | 推理原理、推理服务数据流、PD 混部/分离 |
 | **AI DC 规划** | 机房布局、机柜布局、3D 案例、ROI |
 | **后训练** | 大模型后训练流程示意 |
-| **白皮书** | AI DC 白皮书与 2.0 讨论稿 |
+| **Topic** | 白皮书与专题观点（卡片目录） |
 | **About US** | 代码量、Token 用量、团队与开源信息 |
 | **站点状态** | 内部页 `status.html`（访问观测）；About US 头像悬停 2s 入口；见 `deploy/ANALYTICS.md` |
 
@@ -116,7 +116,7 @@ cp deploy.env.example deploy.env   # 填写 SSH，勿提交
 ./scripts/deploy.sh --push-only               # 归档：push 到 GitHub
 ```
 
-**白皮书 PDF**：仓库 `.gitignore` 忽略 `assets/*.pdf`。部署前请将中文版 PDF 放到 `assets/aidc-whitepaper-2024-zh.pdf`（与 `white-paper.html` 引用路径一致）；未放置时页面会显示「PDF 暂未就绪」提示而非空白 iframe。
+**白皮书 PDF**：仓库 `.gitignore` 忽略 `assets/*.pdf`。部署前请将中文版 PDF 放到 `assets/aidc-whitepaper-2024-zh.pdf`（与 `white-paper-2024.html` 引用路径一致）；未放置时预览页会显示「PDF 暂未就绪」提示而非空白 iframe。Topic 目录在 `topic.html`（旧地址 `white-paper.html` 由 Nginx 301），条目由 `data/topics.json` 维护。
 
 线上站点：[https://www.aidc2026.cn](https://www.aidc2026.cn)
 
