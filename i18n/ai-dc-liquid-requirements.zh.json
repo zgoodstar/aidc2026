@@ -64,6 +64,7 @@
     "futureLoad": "楼板承重 ≥20–25 kN/㎡",
     "rackTop": "液冷",
     "rackBottom": "机柜",
-    "currentTotal": "≥6.5 m"
+    "currentTotal": "（参考设计院要求）",
+    "currentTotalMetric": "参考设计院要求"
   }
 }

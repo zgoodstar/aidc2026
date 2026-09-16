@@ -64,6 +64,7 @@
     "futureLoad": "Slab capacity ≥20–25 kN/m²",
     "rackTop": "Liquid",
     "rackBottom": "rack",
-    "currentTotal": "≥6.5 m"
+    "currentTotal": "(Per design institute)",
+    "currentTotalMetric": "Per design institute"
   }
 }
