@@ -9,7 +9,7 @@
 
   const IFRAME_BASE = {
     roomLayout: 'ai-dc-room-layout.html?embed=1',
-    roomLayout3d: 'ai-dc-room-layout-3d.html?embed=1',
+    roomLayout3d: 'ai-dc-room-layout-3d.html?embed=1&rev=campus-row-3',
     power: 'ai-dc-power.html?embed=1',
     liquidRack: 'ai-dc-liquid-rack.html?embed=1&rev=return-to-requirements-1',
     liquidRequirements: 'ai-dc-liquid-requirements.html?embed=1&rev=remove-hot-aisle-1',

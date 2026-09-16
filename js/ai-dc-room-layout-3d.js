@@ -197,7 +197,7 @@ function addGround() {
 
   const roadColor = themeColor(0x8798a3, COLORS.road);
   box([35, 0.03, 2.1], [0, 0.01, 7.4], material(roadColor, { roughness: 1 }));
-  box([2.1, 0.035, 23], [-3.8, 0.015, 0.5], material(roadColor, { roughness: 1 }));
+  box([0.8, 0.035, 23], [3.1, 0.015, 0.5], material(roadColor, { roughness: 1 }));
   box([17, 0.03, 1.25], [5.8, 0.02, -4.6], material(roadColor, { roughness: 1 }));
 
   const lakeMat = material(themeColor(0x70b7cf, 0x174b66), { roughness: 0.25, metalness: 0.1, transparent: true, opacity: 0.8 });
@@ -329,8 +329,8 @@ function addGeneratorPlant() {
 
 function buildCampus() {
   addGround();
-  createCampusBuilding({ labelKey: 'objects.a02', x: 0.7, z: -1.1, w: 13.8, d: 5.8, h: 5.3, hot: true, action: { type: 'building' } });
-  createCampusBuilding({ labelKey: 'objects.a01', x: 8.4, z: 5.3, w: 10.4, d: 5.4, h: 4.5 });
+  createCampusBuilding({ labelKey: 'objects.a02', x: -1.8, z: -0.4, w: 8.4, d: 6.6, h: 4.8, hot: true, action: { type: 'building' } });
+  createCampusBuilding({ labelKey: 'objects.a01', x: 8.0, z: -0.4, w: 8.4, d: 6.6, h: 4.8 });
   createCampusBuilding({ labelKey: 'objects.office', x: -10.6, z: 5.1, w: 6.2, d: 4.3, h: 3.2, color: themeColor(0x91a4b2, 0x516678) });
   createCampusBuilding({ labelKey: 'objects.substation', x: -11.35, z: -5.15, w: 2.4, d: 2.35, h: 1.65, color: themeColor(0x8198a7, 0x3d5363) });
   addSubstationYard();
@@ -949,7 +949,7 @@ function buildFloorDetail() {
 }
 
 const PRESETS = {
-  campus: { camera: [27, 22, 30], target: [0, 1.6, 1], min: 16, max: 58 },
+  campus: { camera: [7, 22, 36], target: [0, 1.6, 1], min: 16, max: 58 },
   building: { camera: [22, 17, 24], target: [0, 5.4, 0], min: 13, max: 48 },
   floor: { camera: [24, 15.5, 25], target: [0, 1.05, 0], min: 12, max: 48 },
 };
