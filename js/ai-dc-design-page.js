@@ -11,14 +11,15 @@
     roomLayout: 'ai-dc-room-layout.html?embed=1',
     roomLayout3d: 'ai-dc-room-layout-3d.html?embed=1',
     power: 'ai-dc-power.html?embed=1',
-    liquidRack: 'ai-dc-liquid-rack.html?embed=1',
+    liquidRack: 'ai-dc-liquid-rack.html?embed=1&rev=return-to-requirements-1',
+    liquidRequirements: 'ai-dc-liquid-requirements.html?embed=1&rev=remove-hot-aisle-1',
     tcp: 'ai-dc-tcp.html?embed=1',
     computeEst: 'ai-dc-computeEst.html?embed=1',
     caseA: 'datacenter-3d-case-b.html?embed=1',
     caseB: 'datacenter-3d-v3-2.html?embed=1',
     plan: 'ai-dc-layout.html?embed=1',
     synergy: 'ai-dc-deployment-perf.html?embed=1',
-    scheduleBudget: 'ai-dc-schedule-budget.html?embed=1',
+    scheduleBudget: 'ai-dc-schedule-budget.html?embed=1&rev=money-units-1',
     roi: 'aidc-investment-roi.html?embed=1',
   };
 
@@ -89,7 +90,7 @@
     return selectLayoutTab;
   }
 
-  const VALID_TABS = ['roomLayout', 'roomLayout3d', 'power', 'liquidRack', 'tcp', 'computeEst', 'plan', 'synergy', 'a', 'b', 'scheduleBudget', 'roi'];
+  const VALID_TABS = ['roomLayout', 'roomLayout3d', 'power', 'liquidRack', 'liquidRequirements', 'tcp', 'computeEst', 'plan', 'synergy', 'a', 'b', 'scheduleBudget', 'roi'];
 
   function initialTabFromUrl() {
     const tab = new URLSearchParams(global.location.search).get('tab');
@@ -103,6 +104,7 @@
     roomLayout3d: 'panel-room-layout-3d',
     power: 'panel-power',
     liquidRack: 'panel-liquid-rack',
+    liquidRequirements: 'panel-liquid-requirements',
     tcp: 'panel-tcp',
     computeEst: 'panel-compute-est',
     plan: 'panel-plan',

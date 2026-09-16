@@ -12,7 +12,7 @@
             ['nav.menu.roomLayout', '机房布局', 'ai-dc-design.html?tab=roomLayout'],
             ['nav.menu.roomLayout3d', '机房布局 3D', 'ai-dc-design.html?tab=roomLayout3d'],
             ['nav.menu.power', '机房供电', 'ai-dc-design.html?tab=power'],
-            ['nav.menu.liquidRack', '机房液冷', 'ai-dc-design.html?tab=liquidRack'],
+            ['nav.menu.liquidRequirements', '机房液冷层高承重', 'ai-dc-design.html?tab=liquidRequirements'],
           ],
         },
         {

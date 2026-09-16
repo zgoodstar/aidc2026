@@ -128,6 +128,7 @@
             class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-white/80 hover:text-slate-950"
             data-i18n="tabs.liquidRack"
           >机房液冷</button>
+          <button type="button" id="tab-liquid-requirements" role="tab" aria-selected="false" aria-controls="panel-liquid-requirements" data-layout-tab="liquidRequirements" tabindex="-1" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-white/80 hover:text-slate-950" data-i18n="tabs.liquidRequirements">机房液冷层高承重</button>
           <button
             type="button"
             id="tab-tcp"
@@ -266,6 +267,11 @@
           ></iframe>
         </div>
       </div>
+      <div id="panel-liquid-requirements" role="tabpanel" aria-labelledby="tab-liquid-requirements" aria-hidden="true" class="hidden min-w-0 w-full">
+        <div class="min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/70">
+          <iframe data-iframe-key="liquidRequirements" data-i18n-title="iframe.liquidRequirements" title="AI DC 布局 · 机房液冷层高承重" class="block h-[min(92vh,75rem)] w-full min-h-[44rem] bg-[#edf4f9]" loading="lazy"></iframe>
+        </div>
+      </div>
 
       <div id="panel-tcp" role="tabpanel" aria-labelledby="tab-tcp" aria-hidden="true" class="hidden min-w-0 w-full">
         <div class="min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/70">
@@ -381,9 +387,9 @@
   <script src="js/i18n.js?v=88"></script>
   <script src="js/lang-switch.js?v=88"></script>
   <script src="js/aidc-refresh-flash.js?v=88"></script>
-<script src="js/aidc-mega-nav.js?v=88"></script>
+<script src="js/aidc-mega-nav.js?v=89&rev=liquid-3d-entry-1"></script>
   <script src="js/i18n-bootstrap.js?v=88"></script>
-  <script src="js/ai-dc-design-page.js?v=88"></script>
+  <script src="js/ai-dc-design-page.js?v=96&rev=ict-scope-5"></script>
   <script>
     AidcI18nBootstrap.bootstrap('ai-dc-design', {
       onReady: function () {

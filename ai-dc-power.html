@@ -41,8 +41,6 @@
         <button type="button" id="energyView" data-i18n="controls.energyView">能源区</button>
         <button type="button" id="hallView" data-i18n="controls.hallView">机房区</button>
         <button type="button" id="voltages" aria-pressed="false" data-i18n="controls.showVoltages">显示电压</button>
-        <button type="button" id="lines" aria-pressed="true" data-i18n="controls.hideLines">隐藏线路</button>
-        <button type="button" id="walls" aria-pressed="true" data-i18n="controls.hideWalls">隐藏墙体</button>
         <button type="button" id="reset" data-i18n="controls.reset">重置视角</button>
       </div>
     </div>
@@ -52,7 +50,7 @@
     <aside id="info" class="glass">
       <div class="eyebrow" data-i18n="app.eyebrow">POWER DIGITAL TWIN</div>
       <div class="info-title" id="infoTitle" data-i18n="info.title">供电系统全景</div>
-      <div class="info-copy" id="infoCopy" data-i18n="info.copy">供电链路从高架 500kV 枢纽站逐级降压至 220kV、10kV 与 380V，经过 UPS 与输出配电后送入 AI 服务器机柜。</div>
+      <div class="info-copy" id="infoCopy" data-i18n="info.copy">市电与柴油发电机在 10kV 中压 ATS 联锁切换，再经变压器降至 380V，通过 UPS 为智能微模块供电。</div>
       <div class="status"><span data-i18n="app.status">当前状态</span><span class="online" id="stateText">市电正常</span></div>
     </aside>
 
@@ -60,12 +58,12 @@
       <span class="key"><i class="line blue"></i><span data-i18n="legend.high">500/220/10kV</span></span>
       <span class="key"><i class="line cyan"></i><span data-i18n="legend.low">380V / UPS输出</span></span>
       <span class="key"><i class="line orange"></i><span data-i18n="legend.battery">电池 DC</span></span>
-      <span class="key"><i class="line green"></i><span data-i18n="legend.gen">发电机</span></span>
+      <span class="key"><i class="line green"></i><span data-i18n="legend.gen">发电机 10kV</span></span>
     </div>
 
     <div id="progress" class="glass">
       <span class="dot" aria-hidden="true"></span>
-      <span id="progressText">500kV 市电逐级降压供电 · IT 负载正常运行</span>
+      <span id="progressText">市电 10kV → 中压 ATS → 变压器 380V → UPS → 智能微模块</span>
     </div>
 
     <div id="loading" class="loading-state">

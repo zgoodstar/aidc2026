@@ -127,6 +127,7 @@ def schedule_scenario(
     infra_per_w: float,
     electricity: float,
     years: float,
+    maintenance_rate: float,
 ) -> dict[str, float] | None:
     """机房工期和造价。非法输入返回 None，不传播 NaN。
 
@@ -134,21 +135,23 @@ def schedule_scenario(
     机房 MW = ICT MW × PUE
     L0+L1 = 机房 MW × 10⁶ × $/W
     ICT = cards × $/card
-    年 OPEX = 机房 MW × 1000 × 8760 × $/kWh
+    年 OPEX = 年电费 + CAPEX × 年运维费率 / 100
     """
-    values = (cards, card_power_kw, pue, unit_cost, infra_per_w, electricity, years)
+    values = (cards, card_power_kw, pue, unit_cost, infra_per_w, electricity, years, maintenance_rate)
     if any(not math.isfinite(value) for value in values):
         return None
     if cards < 1 or pue < 1 or years < 1:
         return None
-    if card_power_kw < 0 or unit_cost < 0 or infra_per_w < 0 or electricity < 0:
+    if card_power_kw < 0 or unit_cost < 0 or infra_per_w < 0 or electricity < 0 or not 0 <= maintenance_rate <= 100:
         return None
     ict_mw = cards * card_power_kw / 1000
     facility_mw = ict_mw * pue
     ict_cost = cards * unit_cost
     infra_cost = facility_mw * 1e6 * infra_per_w
     capex = ict_cost + infra_cost
-    annual_opex = facility_mw * 1000 * 8760 * electricity
+    annual_electricity = facility_mw * 1000 * 8760 * electricity
+    annual_maintenance = capex * maintenance_rate / 100
+    annual_opex = annual_electricity + annual_maintenance
     opex = annual_opex * years
     return {
         "ict_mw": ict_mw,
@@ -156,6 +159,8 @@ def schedule_scenario(
         "ict_cost": ict_cost,
         "infra_cost": infra_cost,
         "capex": capex,
+        "annual_electricity": annual_electricity,
+        "annual_maintenance": annual_maintenance,
         "annual_opex": annual_opex,
         "opex": opex,
         "total": capex + opex,

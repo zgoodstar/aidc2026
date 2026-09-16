@@ -76,6 +76,7 @@
         "ai-dc-room-layout-3d.html",
         "ai-dc-power.html",
         "ai-dc-liquid-rack.html",
+        "ai-dc-liquid-requirements.html",
         "ai-dc-tcp.html",
         "ai-dc-computeEst.html",
         "ai-dc-layout.html",
@@ -580,6 +581,28 @@
       "assets": [
         "i18n/404.zh.json",
         "i18n/404.en.json"
+      ],
+      "dataSources": []
+    },
+    {
+      "path": "ai-dc-liquid-requirements.html",
+      "id": "ai-dc-liquid-requirements",
+      "title": "机房液冷层高承重",
+      "kind": "embedded",
+      "visibility": "public",
+      "parents": [
+        {
+          "path": "ai-dc-design.html",
+          "relation": "iframe",
+          "tab": "liquidRequirements"
+        }
+      ],
+      "embeds": [],
+      "assets": [
+        "js/ai-dc-liquid-requirements.js",
+        "css/ai-dc-liquid-requirements.css",
+        "i18n/ai-dc-liquid-requirements.zh.json",
+        "i18n/ai-dc-liquid-requirements.en.json"
       ],
       "dataSources": []
     }

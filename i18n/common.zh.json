@@ -30,6 +30,7 @@
       "caseB": "案例B（风冷）",
       "scheduleBudget": "机房工期和造价",
       "roi": "Investment ROI",
+      "liquidRequirements": "机房液冷层高承重",
       "inferenceMechanism": "推理机制",
       "deploymentCapacity": "部署与容量",
       "principles": "推理原理",

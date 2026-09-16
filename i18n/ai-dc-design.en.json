@@ -16,7 +16,8 @@
     "tcp": "Token->Card->Power",
     "computeEst": "Compute Estimation",
     "scheduleBudget": "Room Schedule & Cost",
-    "roi": "Investment ROI"
+    "roi": "Investment ROI",
+    "liquidRequirements": "Liquid Cooling Height & Load"
   },
   "iframe": {
     "roomLayout": "AI DC Layout · Data Hall Layout",
@@ -30,7 +31,8 @@
     "plan": "AI DC Layout · Rack Planning",
     "synergy": "AI DC Layout · Product Synergy",
     "scheduleBudget": "AI DC Layout · Room Schedule & Cost",
-    "roi": "AI DC Layout · Investment ROI"
+    "roi": "AI DC Layout · Investment ROI",
+    "liquidRequirements": "AI DC Layout · Liquid Cooling Height & Load"
   },
   "placeholder": {
     "body": "Content is under development. Please check back soon."

@@ -16,7 +16,8 @@
     "tcp": "Token->Card->Power",
     "computeEst": "算力估算",
     "scheduleBudget": "机房工期和造价",
-    "roi": "Investment ROI"
+    "roi": "Investment ROI",
+    "liquidRequirements": "机房液冷层高承重"
   },
   "iframe": {
     "roomLayout": "AI DC 布局 · 机房布局",
@@ -30,7 +31,8 @@
     "plan": "AI DC 布局 · 机柜规划",
     "synergy": "AI DC 布局 · 产品协同",
     "scheduleBudget": "AI DC 布局 · 机房工期和造价",
-    "roi": "AI DC 布局 · Investment ROI"
+    "roi": "AI DC 布局 · Investment ROI",
+    "liquidRequirements": "AI DC 布局 · 机房液冷层高承重"
   },
   "placeholder": {
     "body": "内容建设中，敬请期待。"

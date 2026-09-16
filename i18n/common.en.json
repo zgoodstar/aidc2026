@@ -30,6 +30,7 @@
       "caseB": "Case B (Air-Cooled)",
       "scheduleBudget": "Room Schedule & Cost",
       "roi": "Investment ROI",
+      "liquidRequirements": "Liquid Cooling Height & Load",
       "inferenceMechanism": "Inference Mechanics",
       "deploymentCapacity": "Deployment & Capacity",
       "principles": "Inference Principles",
